@@ -49,7 +49,7 @@ final class PokemonListPresenter: PokemonListEventHandlerProtocol, PokemonListIn
         view.showPokemons(pokemons: pokemons)
     }
 
-    func pokemonsFetchError() {
+    func pokemonsFetchError(_ error: Error?) {
         
     }
 }

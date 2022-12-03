@@ -9,7 +9,7 @@ import PokemonAPI
 
 protocol PokemonListInteractorDelegate: AnyObject {
     func pokemonsDidFetch(pokemons: [PKMNamedAPIResource<PKMPokemon>])
-    func pokemonsFetchError()
+    func pokemonsFetchError(_ error: Error?)
 }
 
 final class PokemonListInteractor {
@@ -26,10 +26,10 @@ final class PokemonListInteractor {
                 if let results = pokemon.results as? [PKMNamedAPIResource<PKMPokemon>] {
                     self.delegate?.pokemonsDidFetch(pokemons: results)
                 } else {
-                    self.delegate?.pokemonsFetchError()
+                    self.delegate?.pokemonsFetchError(nil)
                 }
             case let .failure(error):
-                self.delegate?.pokemonsFetchError()
+                self.delegate?.pokemonsFetchError(error)
             }
         }
     }
