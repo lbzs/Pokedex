@@ -1,0 +1,26 @@
+name: Pokedex
+options:
+  bundleIdPrefix: com
+  deploymentTarget: "14.0"
+packages:
+  PokemonAPI:
+    url: https://github.com/kinkofer/PokemonAPI
+    from: 6.1.0
+targets:
+  Pokedex:
+    type: application
+    platform: iOS
+    info:
+      path: Pokedex/Resources/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations: 
+            UIWindowSceneSessionRoleApplication:
+               - UISceneConfigurationName: "Default Configuration"
+                 UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+    sources: 
+      - Pokedex
+    dependencies:
+      - package: PokemonAPI
