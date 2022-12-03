@@ -11,6 +11,7 @@ import PokemonAPI
 
 protocol PokemonListWireframeProtocol: AnyObject {
 
+    func makePokemonListViewController() -> UIViewController
     func presentPokemonDetails(pokemon: PKMNamedAPIResource<PKMPokemon>, from: UIViewController)
 }
 
@@ -27,8 +28,6 @@ final class PokemonListWireframe: PokemonListWireframeProtocol {
         pokemonListPresenter?.wireframe = self
         return pokemonListViewController
     }
-
-    // MARK: - PokemonListWireframeProtocol
 
     func presentPokemonDetails(pokemon: PKMNamedAPIResource<PKMPokemon>, from view: UIViewController) {
         guard let pokemonName = pokemon.name else { return }
