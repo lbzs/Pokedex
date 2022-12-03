@@ -73,10 +73,10 @@
 		7D3413DD293BA28F00ED331D /* PokemonDetail */ = {
 			isa = PBXGroup;
 			children = (
+				7D3413E4293BA79200ED331D /* PokemonDetailInteractor.swift */,
 				7D3413E2293BA51800ED331D /* PokemonDetailPresenter.swift */,
 				7D3413E0293BA2D900ED331D /* PokemonDetailViewController.swift */,
 				7D3413DE293BA29F00ED331D /* PokemonDetailWireframe.swift */,
-				7D3413E4293BA79200ED331D /* PokemonDetailInteractor.swift */,
 			);
 			path = PokemonDetail;
 			sourceTree = "<group>";
